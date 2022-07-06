@@ -1,0 +1,115 @@
+.header{
+	width: 100%;
+	position: fixed;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	
+	&__nav{
+		height: font-sizes(header-size);
+		display: flex;
+		width: 100%;
+		justify-content: flex-start;
+		padding-left: 98px;
+		align-items: center;
+		&--logo{
+			display: flex;
+			align-items: center;
+			width: 200px;
+			margin-right: 17rem;
+			display: block;
+			outline: none;
+		}
+		&--links{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			min-width:  400px;
+			&__item{
+				font-size: 3rem;
+				color: getcolors(txt-color);
+				font-family: MyriadProBold;
+				display: block;
+				margin-left: 0.25rem;
+				text-transform: capitalize;
+				font-weight: 600;
+				transition: all 0.5s ease-in;
+			}
+			&__item:hover, &__item:active{
+				color: getcolors(main-color);
+			}
+		}
+	}
+	
+	&__lines{
+		position: fixed;
+		display: none;
+		right: 4rem;
+		width: 5rem;
+		height: 5rem;
+		z-index: 99;		
+		cursor: pointer;
+		&--item{
+			display: block;
+			position: relative;
+			top: 0;
+    			left: 0;
+    			right: 0;
+    			bottom: 0;			    
+			margin: 0;    
+			width: 5rem;
+			height: 0.5rem;
+			background-color: getcolors(txt-color);
+			z-index: 99;
+		}
+		&--item::before, &--item::after{
+			position: absolute;
+			content: "";		
+			width: 100%;
+			height: 100%;
+			background-color: getcolors(txt-color);
+			transition: all 0.25s;
+		}
+		&--item::after{
+			bottom: -1rem;
+		}
+		&--item::before{
+			top: -1rem;
+		}
+		
+	}
+	
+	&.active .header__lines .header__lines--item{
+			background-color: transparent;
+	}
+	&.active .header__lines .header__lines--item::before{
+			transform: rotate(225deg);
+		}
+	&.active .header__lines .header__lines--item::after{
+			transform: rotate(-225deg);
+		}
+	&.active .header__lines .header__lines--item::before,
+	&.active .header__lines .header__lines--item::after{
+		top:0;
+		}
+	
+	&__overlay{
+		top:0;
+		left: 100%;
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		background-color: getcolors(body-bg);
+		opacity: 0.8;
+		transition: all 0.4s ease-in-out;
+		
+	}
+	&.active .header__overlay{
+		left: 0;
+	}
+	&.active .header__nav .header__nav--links{
+		left:0%;
+	}
+
+}
+

@@ -1,0 +1,24 @@
+@font-face {
+    font-family: BerlinSans;
+    src: url(./fonts/BerlinSansFBDemiBold/BerlinSansFBDemiBold.ttf);
+}
+
+@font-face {
+    font-family: MyriadProBold;
+    src: url(./fonts/MyriadPro/MyriadProBold.ttf);
+}
+
+@font-face {
+    font-family: MyriadProRegular;
+    src: url(./fonts/MyriadPro/MyriadProRegular.ttf);
+}
+
+@font-face {
+    font-family: Bauhaus93;
+    src: url(./fonts/Bauhaus93/Bauhaus93Regular.ttf);
+}
+*, *::before, *::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}

@@ -1,0 +1,15 @@
+$colors:(
+"main-color": #39b54a,
+  "body-bg": #000,
+    "txt-color": #fffefe,
+);
+@function getcolors($color-style){
+	@return map-get($colors , $color-style )
+}
+$font-sizes:(
+	"header-size":127px,
+	"logo-size":214px,
+	);
+@function font-sizes($font-size-style){
+		@return map-get($font-sizes, $font-size-style);
+	}
